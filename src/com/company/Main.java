@@ -1,6 +1,5 @@
 package com.company;
 import com.company.comparators.PriceComparator;
-import com.company.comparators.SizeComparator;
 import com.company.room.Room;
 import com.company.room.RoomHandler;
 

@@ -8,13 +8,13 @@ public class Toy {
     private final ToySize toySize;
     private final ToyAgeGroup toyAgeGroup;
 
-    public Toy(ToyType toyType, ToySize toySize, ToyAgeGroup toyAgeGroup){
+    public Toy(ToyType toyType, ToySize toySize, ToyAgeGroup toyAgeGroup) {
         this.toyType = toyType;
         this.toySize = toySize;
         this.toyAgeGroup = toyAgeGroup;
     }
 
-    public long getPrice(){
+    public long getPrice() {
         return (long) (toyType.getBasePrice() * toySize.getMargin());
     }
 

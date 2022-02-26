@@ -5,6 +5,7 @@ public enum ToyAgeGroup {
         public String getDescription() {
             return "from 1 to 3 yo";
         }
+
         public int getValue() {
             return 1;
         }
@@ -13,6 +14,7 @@ public enum ToyAgeGroup {
         public String getDescription() {
             return "from 3 to 5 yo";
         }
+
         public int getValue() {
             return 2;
         }
@@ -21,11 +23,13 @@ public enum ToyAgeGroup {
         public String getDescription() {
             return "from 5 to 7 yo";
         }
+
         public int getValue() {
             return 3;
         }
     };
 
     public abstract String getDescription();
+
     public abstract int getValue();
 }

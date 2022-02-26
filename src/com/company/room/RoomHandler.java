@@ -1,8 +1,10 @@
 package com.company.room;
+
 import com.company.toys.Toy;
 import com.company.toys.ToyAgeGroup;
 import com.company.toys.ToySize;
 import com.company.toys.ToyType;
+
 import java.util.Objects;
 import java.util.Random;
 
@@ -13,19 +15,24 @@ public class RoomHandler {
         this.room = room;
     }
 
-    private boolean addRandomToy() {
+    private Toy addRandomToy() {
         Random random = new Random();
         int toyTypeIndex = random.nextInt(ToyType.values().length);
         int toySizeIndex = random.nextInt(ToySize.values().length);
         int toyAgeGroupIndex = random.nextInt(ToyAgeGroup.values().length);
-        Toy randomToy = new Toy(ToyType.values()[toyTypeIndex], ToySize.values()[toySizeIndex], ToyAgeGroup.values()[toyAgeGroupIndex]);
+        Toy randomToy = new Toy(
+                ToyType.values()[toyTypeIndex],
+                ToySize.values()[toySizeIndex],
+                ToyAgeGroup.values()[toyAgeGroupIndex]
+        );
         return room.addToy(randomToy);
 
     }
-    public void fillRandomToys(){
-        boolean hasMoney = true;
-        while (hasMoney) {
-            hasMoney = addRandomToy();
+
+    public void fillRandomToys() {
+        long toyPrice = 0;
+        while (room.getFreeMoney() > toyPrice) {
+            toyPrice = addRandomToy().getPrice();
         }
     }
 
