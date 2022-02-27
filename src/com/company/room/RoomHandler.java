@@ -1,5 +1,6 @@
 package com.company.room;
 
+import com.company.NotEnoughMoneyException;
 import com.company.toys.Toy;
 import com.company.toys.ToyAgeGroup;
 import com.company.toys.ToySize;
@@ -15,24 +16,27 @@ public class RoomHandler {
         this.room = room;
     }
 
-    private Toy addRandomToy() {
+    private Toy getRandomToy() {
         Random random = new Random();
         int toyTypeIndex = random.nextInt(ToyType.values().length);
         int toySizeIndex = random.nextInt(ToySize.values().length);
         int toyAgeGroupIndex = random.nextInt(ToyAgeGroup.values().length);
-        Toy randomToy = new Toy(
+        return new Toy(
                 ToyType.values()[toyTypeIndex],
                 ToySize.values()[toySizeIndex],
                 ToyAgeGroup.values()[toyAgeGroupIndex]
         );
-        return room.addToy(randomToy);
-
     }
 
     public void fillRandomToys() {
-        long toyPrice = 0;
-        while (room.getFreeMoney() > toyPrice) {
-            toyPrice = addRandomToy().getPrice();
+        Toy randomToy = getRandomToy();
+        while (room.getFreeMoney() > randomToy.getPrice()) {
+            try {
+                room.addToy(randomToy);
+                randomToy = getRandomToy();
+            } catch (NotEnoughMoneyException e) {
+                e.printStackTrace();
+            }
         }
     }
 

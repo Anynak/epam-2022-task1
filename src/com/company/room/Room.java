@@ -1,5 +1,6 @@
 package com.company.room;
 
+import com.company.NotEnoughMoneyException;
 import com.company.toys.Toy;
 
 import java.util.ArrayList;
@@ -18,12 +19,16 @@ public class Room {
         return freeMoney;
     }
 
-    public Toy addToy(Toy toy) {
-        if (toy != null && toy.getPrice() <= getFreeMoney()) {
-            toys.add(toy);
-            freeMoney -= toy.getPrice();
+    public void addToy(Toy toy) throws NotEnoughMoneyException {
+        if (toy != null) {
+            if (toy.getPrice() <= getFreeMoney()) {
+                toys.add(toy);
+                freeMoney -= toy.getPrice();
+            } else {
+                throw new NotEnoughMoneyException(freeMoney + " money Available. Toy price is " + toy.getPrice());
+            }
         }
-        return toy;
+
     }
 
     public void sort(Comparator<Toy> comparator) {
