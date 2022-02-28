@@ -1,10 +1,10 @@
 package com.company.room;
 
 import com.company.NotEnoughMoneyException;
-import com.company.toys.Toy;
-import com.company.toys.ToyAgeGroup;
-import com.company.toys.ToySize;
-import com.company.toys.ToyType;
+import com.company.toy.Toy;
+import com.company.toy.AgeGroup;
+import com.company.toy.Size;
+import com.company.toy.Type;
 
 import java.util.Objects;
 import java.util.Random;
@@ -18,13 +18,13 @@ public class RoomHandler {
 
     private Toy getRandomToy() {
         Random random = new Random();
-        int toyTypeIndex = random.nextInt(ToyType.values().length);
-        int toySizeIndex = random.nextInt(ToySize.values().length);
-        int toyAgeGroupIndex = random.nextInt(ToyAgeGroup.values().length);
+        int toyTypeIndex = random.nextInt(Type.values().length);
+        int toySizeIndex = random.nextInt(Size.values().length);
+        int toyAgeGroupIndex = random.nextInt(AgeGroup.values().length);
         return new Toy(
-                ToyType.values()[toyTypeIndex],
-                ToySize.values()[toySizeIndex],
-                ToyAgeGroup.values()[toyAgeGroupIndex]
+                Type.values()[toyTypeIndex],
+                Size.values()[toySizeIndex],
+                AgeGroup.values()[toyAgeGroupIndex]
         );
     }
 

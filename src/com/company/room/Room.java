@@ -1,7 +1,8 @@
 package com.company.room;
 
+import com.company.Filters.RangeFilter;
 import com.company.NotEnoughMoneyException;
-import com.company.toys.Toy;
+import com.company.toy.Toy;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -33,6 +34,16 @@ public class Room {
 
     public void sort(Comparator<Toy> comparator) {
         getToys().sort(comparator);
+    }
+
+    public ArrayList<Toy> findToys(RangeFilter rangeFilter) {
+        ArrayList<Toy> foundToys = new ArrayList<>();
+        for (Toy toy : toys) {
+            if (rangeFilter.check(toy)) {
+                foundToys.add(toy);
+            }
+        }
+        return foundToys;
     }
 
     public ArrayList<Toy> getToys() {

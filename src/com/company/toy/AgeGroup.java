@@ -1,6 +1,6 @@
-package com.company.toys;
+package com.company.toy;
 
-public enum ToyAgeGroup {
+public enum AgeGroup {
     AGE_GROUP_1 {
         public String getDescription() {
             return "from 1 to 3 yo";

@@ -1,6 +1,6 @@
-package com.company.toys;
+package com.company.toy;
 
-public enum ToyType {
+public enum Type {
     CAR {
         public double getBasePrice() {
             return 150;

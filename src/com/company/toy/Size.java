@@ -1,6 +1,6 @@
-package com.company.toys;
+package com.company.toy;
 
-public enum ToySize {
+public enum Size {
     SMALL {
         public double getMargin() {
             return 1;
