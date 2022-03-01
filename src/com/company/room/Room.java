@@ -1,7 +1,7 @@
 package com.company.room;
 
-import com.company.Filters.RangeFilter;
-import com.company.NotEnoughMoneyException;
+import com.company.filters.RangeFilter;
+import com.company.exceptions.NotEnoughMoneyException;
 import com.company.toy.Toy;
 
 import java.util.ArrayList;
@@ -29,7 +29,6 @@ public class Room {
                 throw new NotEnoughMoneyException(freeMoney + " money Available. Toy price is " + toy.getPrice());
             }
         }
-
     }
 
     public void sort(Comparator<Toy> comparator) {
@@ -71,5 +70,4 @@ public class Room {
         }
         return toyList.toString();
     }
-
 }

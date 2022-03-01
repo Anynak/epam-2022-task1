@@ -1,6 +1,5 @@
-package com.company.Filters;
+package com.company.filters;
 
-import com.company.toy.AgeGroup;
 import com.company.toy.Toy;
 import com.company.toy.Size;
 

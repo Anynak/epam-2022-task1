@@ -1,6 +1,6 @@
 package com.company.room;
 
-import com.company.NotEnoughMoneyException;
+import com.company.exceptions.NotEnoughMoneyException;
 import com.company.toy.Toy;
 import com.company.toy.AgeGroup;
 import com.company.toy.Size;

@@ -1,4 +1,4 @@
-package com.company.Filters;
+package com.company.filters;
 
 import com.company.toy.Toy;
 

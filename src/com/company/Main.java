@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.Filters.SizeRangeFilter;
+import com.company.filters.SizeRangeFilter;
 import com.company.comparators.PriceComparator;
 import com.company.room.Room;
 import com.company.room.RoomHandler;
