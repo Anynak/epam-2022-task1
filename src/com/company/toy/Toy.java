@@ -14,8 +14,8 @@ public class Toy {
         this.ageGroup = ageGroup;
     }
 
-    public long getPrice() {
-        return (long) (type.getBasePrice() * size.getMargin());
+    public double getPrice() {
+        return (type.getBasePrice() * size.getMargin());
     }
 
     public Type getType() {
@@ -48,7 +48,7 @@ public class Toy {
         return "Toy{" +
                 "toyType=" + type +
                 ", toySize=" + size.getDescription() +
-                ", toyAgeGroup=" + ageGroup.getDescription() +
+                ", toyAgeGroup=" + ageGroup +
                 ", toyPrice=" + getPrice() +
                 '}';
     }
